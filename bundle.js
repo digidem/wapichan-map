@@ -24244,7 +24244,7 @@ function onLoad() {
   map.on('click', function (e) {
     var features = map.queryRenderedFeatures(e.point, { layers: ['points'] });
 
-    if (!features.length) return;
+    if (!features.length) return popup.remove();
 
     var loc = features[0].geometry.coordinates;
     popup.popup.options.offset = popupOffsets;
@@ -24266,7 +24266,7 @@ var mapboxgl = require('mapbox-gl');
 var assign = require('object-assign');
 var format = require('date-fns/format');
 
-var popupStyle = (require('sheetify/insert')(".embed-responsive {\n    position: relative;\n    display: block;\n    width: 100%;\n    padding: 0;\n    overflow: hidden;\n  }\n  .embed-responsive::before {\n    display: block;\n    content: \"\";\n  }\n  .embed-responsive .embed-responsive-item,\n  .embed-responsive embed,\n  .embed-responsive iframe,\n  .embed-responsive object,\n  .embed-responsive video {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    border: 0;\n  }\n  ._4705da04 {\n    width: 300px;\n    background-color: white;\n  }\n  ._4705da04 .embed-responsive-16by9:before {\n    padding-top: 66.67%;\n  }\n  ._4705da04 img {\n    object-fit: cover;\n  }\n  ._4705da04 > .popup-inner {\n    padding: 10px;\n  }\n  ._4705da04 iframe {\n    display: block;\n  }\n\n  ._4705da04 h1 {\n    font-size: 1.5em;\n    line-height: 1.3;\n    margin-bottom: 0.1em;\n    margin-top: 0;\n  }\n  ._4705da04 h2 {\n    margin-top: 0;\n    font-size: 1.25em;\n    color: grey;\n  }\n  ._4705da04 p {\n    margin-bottom: 0.5em;\n  }") || true) && "_4705da04";
+var popupStyle = (require('sheetify/insert')(".embed-responsive {\n    position: relative;\n    display: block;\n    width: 100%;\n    padding: 0;\n    overflow: hidden;\n  }\n  .embed-responsive::before {\n    display: block;\n    content: \"\";\n  }\n  .embed-responsive .embed-responsive-item,\n  .embed-responsive embed,\n  .embed-responsive iframe,\n  .embed-responsive object,\n  .embed-responsive video {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    border: 0;\n  }\n  ._1b9a4230 {\n    width: 300px;\n    background-color: white;\n  }\n  ._1b9a4230 .embed-responsive-16by9:before {\n    padding-top: 66.67%;\n  }\n  ._1b9a4230 img {\n    object-fit: cover;\n  }\n  ._1b9a4230 > .popup-inner {\n    padding: 10px;\n  }\n  ._1b9a4230 iframe {\n    display: block;\n  }\n\n  ._1b9a4230 h1 {\n    font-size: 1.5em;\n    line-height: 1.3;\n    margin-bottom: 0.1em;\n    margin-top: 0;\n  }\n  ._1b9a4230 h2 {\n    margin-top: 0;\n    font-size: 1.25em;\n    color: grey;\n  }\n  ._1b9a4230 p {\n    margin-bottom: 0.5em;\n  }\n  .mapboxgl-popup-close-button {\n    z-index: 1;\n  }") || true) && "_1b9a4230";
 
 // Clear previous IMG before updating to new image
 // Avoids initial load of previous popup image before new image loads
@@ -24284,7 +24284,8 @@ function Popup(map, opts) {
   if (!(this instanceof Popup)) return new Popup(map, opts);
   this.map = map;
   this.popup = new mapboxgl.Popup(assign({
-    closeButton: true
+    closeButton: true,
+    closeOnClick: false
   }, opts));
   this.popupNode = function () {
 
