@@ -24388,7 +24388,7 @@ var format = require('date-fns/format');
 
 var buttonClass = (require('sheetify/insert')("._a92ccb40 {\n    padding: 0.667rem 1rem;\n    display: block;\n    width: 100%;\n    background: none;\n    border: none;\n    border-bottom: 1px solid #ccc;\n    text-align: left;\n  }\n  ._a92ccb40 .embed-responsive {\n    width: 30%;\n    float: left;\n    margin-right: 0.75em;\n  }\n  ._a92ccb40 .embed-responsive:before {\n    padding-top: 66.67%;\n  }\n  ._a92ccb40:hover {\n    background-color: #eee;\n    cursor: pointer;\n  }\n  ._a92ccb40:focus {\n    background-color: #ddd;\n    outline: none;\n  }\n  ._a92ccb40:first-child {\n    border-top: 1px solid #ccc;\n  }") || true) && "_a92ccb40";
 
-var recentsClass = (require('sheetify/insert')("._d66c7328 {\n    font-size: 16px;\n  }\n  ._d66c7328 header {\n    padding: 1rem;\n  }\n  ._d66c7328 h1,._d66c7328 h2,._d66c7328 h3 {\n    margin-top: 0;\n  }\n  ._d66c7328 h1 {\n    font-size: 1.6em;\n    margin-bottom: 0.1em;\n  }\n  ._d66c7328 h2 {\n    font-size: 1.5em;\n    margin-bottom: 0.3em;\n  }\n  ._d66c7328 h3 {\n    font-size: 1.3em;\n    color: #666;\n  }\n  ._d66c7328 p {\n    line-height: 1.4;\n    margin: 0.5em 0;\n  }") || true) && "_d66c7328";
+var recentsClass = (require('sheetify/insert')("._04894a32 {\n    font-size: 16px;\n  }\n  ._04894a32 header {\n    padding: 1rem;\n  }\n  ._04894a32 h1,._04894a32 h2,._04894a32 h3 {\n    margin-top: 0;\n  }\n  ._04894a32 h1 {\n    font-size: 1.6em;\n    margin-bottom: 0.1em;\n  }\n  ._04894a32 h2 {\n    font-size: 1.5em;\n    margin-bottom: 0.3em;\n  }\n  ._04894a32 h3 {\n    font-size: 1.3em;\n    color: #666;\n  }\n  ._04894a32 p {\n    font-size: 14px;\n    line-height: 1.5;\n    margin: 0.5em 0;\n  }") || true) && "_04894a32";
 
 module.exports = recents;
 
@@ -24402,7 +24402,7 @@ function recents(fc, onClick) {
     var bel0 = document.createElement("h1");
     ac(bel0, ["Monitoring Reports"]);
     var bel1 = document.createElement("p");
-    ac(bel1, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]);
+    ac(bel1, ["This map platform displays some informaton collected by the SRDC local community\n      monitors from 2014–16. It is meant to show some examples and does not contain all the\n      points, which number over 100 sites. The site is work in progress and is still under a\n      process of refinement. The hope is that in due course it will be automatically linked\n      to the local data set (with our own data protection filters that are turned on or off\n      for specific information and images according to the wishes and decisions of our\n      villages and our formal \"Information Sharing and Data Protection Agreement\" (May 2017)"]);
     ac(bel2, ["\n      ", bel0, "\n      ", bel1, "\n    "]);
     var bel3 = document.createElement("div");
     ac(bel3, ["\n      ", arguments[0], "\n    "]);
