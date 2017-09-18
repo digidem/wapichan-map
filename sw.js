@@ -20,11 +20,11 @@ importScripts('workbox-sw.prod.v2.0.1.js');
 const fileManifest = [
   {
     "url": "bundle.js",
-    "revision": "a104403c0aec6aeafccf18c2c79cecb3"
+    "revision": "2978f044e80d2f62fb7dbac41b770dc6"
   },
   {
     "url": "data.json",
-    "revision": "afcbc618be2e39c35cd06495543f66f2"
+    "revision": "81cf29e32f01166bf126526193784908"
   },
   {
     "url": "images/m/bai-wao-paawa.jpg",
