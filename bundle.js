@@ -24188,35 +24188,43 @@ var recents = require('./recents');(require('sheetify/insert')(".mapboxgl-map {\
 var INITIAL_BOUNDS = [[-65, -5], [-52, 12]];
 var TERRITORY_BOUNDS = [[-60, 1.74], [-58.09, 3.36]];
 
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ21hY2xlbm5hbiIsImEiOiJSaWVtd2lRIn0.ASYMZE2HhwkAw4Vt7SavEg';
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
     navigator.serviceWorker.register('/sw.js').then(function (registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      initializeMap();
     }, function (err) {
       // registration failed :(
       console.log('ServiceWorker registration failed: ', err);
+      initializeMap();
     });
   });
+} else {
+  initializeMap();
 }
 
 var data;
+var map;
+var popup;
 var pending = 2;
 // var query = qs.parse(window.location.search, {ignoreQueryPrefix: true})
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ21hY2xlbm5hbiIsImEiOiJSaWVtd2lRIn0.ASYMZE2HhwkAw4Vt7SavEg';
+function initializeMap() {
+  map = window.map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/gmaclennan/cj7ljlyqy8gq52rrptj0zy6w7?fresh=true&optimize=true', // stylesheet location
+    center: [-59.4377, 2.6658], // starting position
+    zoom: 5.5, // starting zoom
+    dragRotate: false
+  }).on('load', onLoad);
 
-var map = window.map = new mapboxgl.Map({
-  container: 'map', // container id
-  style: 'mapbox://styles/gmaclennan/cj7ljlyqy8gq52rrptj0zy6w7?fresh=true&optimize=true', // stylesheet location
-  center: [-59.4377, 2.6658], // starting position
-  zoom: 5.5, // starting zoom
-  dragRotate: false
-}).on('load', onLoad);
-
-map.fitBounds(INITIAL_BOUNDS, { easing: function () {
-    return 1;
-  } });
+  map.fitBounds(INITIAL_BOUNDS, { easing: function () {
+      return 1;
+    } });
+}
 
 d3.json('data.json', function (err, _data) {
   if (err) return console.error(err);
@@ -24239,11 +24247,11 @@ function onClickRecent(id) {
   popup.setLngLat(loc);
 }
 
-// Create a popup, but don't add it to the map yet.
-var popup = new Popup(map);
-
 function onLoad() {
   if (--pending > 0) return;
+
+  // Create a popup, but don't add it to the map yet.
+  popup = new Popup(map);
 
   var nav = new mapboxgl.NavigationControl();
   map.addControl(nav, 'top-left');

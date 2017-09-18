@@ -20,7 +20,7 @@ importScripts('workbox-sw.prod.v2.0.1.js');
 const fileManifest = [
   {
     "url": "bundle.js",
-    "revision": "9e58ef1745e32d47ec35288d193c24ee"
+    "revision": "a104403c0aec6aeafccf18c2c79cecb3"
   },
   {
     "url": "data.json",
@@ -138,6 +138,12 @@ const fileManifest = [
 
 const workboxSW = new self.WorkboxSW();
 workboxSW.precache(fileManifest);
-workboxSW.router.registerRoute(/api\.mapbox\.com|tiles\.mapbox\.com|tiles\.virtualearth\.net/, workboxSW.strategies.staleWhileRevalidate({
-  "cacheName": "map-cache"
+workboxSW.router.registerRoute(/https:\/\/api\.mapbox\.com|https:\/\/[abcd]\.tiles\.mapbox\.com|https:\/\/ecn\.t\d\.tiles\.virtualearth\.net/, workboxSW.strategies.staleWhileRevalidate({
+  "cacheName": "map-cache",
+  "cacheableResponse": {
+    "statuses": [
+      0,
+      200
+    ]
+  }
 }), 'GET');
