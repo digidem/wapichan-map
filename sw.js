@@ -24,7 +24,7 @@ const fileManifest = [
   },
   {
     "url": "data.json",
-    "revision": "81cf29e32f01166bf126526193784908"
+    "revision": "cbfb7c96b9e331b12c78475201001165"
   },
   {
     "url": "images/m/bai-wao-paawa.jpg",
