@@ -71,6 +71,10 @@ const fileManifest = [
     "revision": "494bf88b45d2a871952d777e2c543bca"
   },
   {
+    "url": "assets/missing.png",
+    "revision": "800722b9efdb5139767fb02f9b7f7527"
+  },
+  {
     "url": "assets/s/bai-wao-paawa.jpg",
     "revision": "aec4e1d63486910a2807e91a37724541"
   },
@@ -121,6 +125,10 @@ const fileManifest = [
   {
     "url": "assets/s/wakoda-naawa.jpg",
     "revision": "31e3e73b97a12a9a0c696711e0ee6ec4"
+  },
+  {
+    "url": "bundle.css",
+    "revision": "d2af2e35c5c11a985b0b3f56b94c435c"
   },
   {
     "url": "bundle.es2015.js",
