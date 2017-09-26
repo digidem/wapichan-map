@@ -128,15 +128,15 @@ const fileManifest = [
   },
   {
     "url": "bundle.css",
-    "revision": "41455a98608514315588a6f7445096e9"
+    "revision": "f0358268b71c5d4bc5ef50bfa51a48b2"
   },
   {
     "url": "bundle.es2015.js",
-    "revision": "3cde80faf669ca016aa47be11e20dd08"
+    "revision": "7e2a20319e123db7a8968d2ac2d0626d"
   },
   {
     "url": "bundle.js",
-    "revision": "d69470fb7837b8742885dbfd10e8f808"
+    "revision": "e75aafceea1e4e8c69bb3595ba5016c8"
   },
   {
     "url": "data.json",
