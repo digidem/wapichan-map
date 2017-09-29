@@ -132,11 +132,11 @@ const fileManifest = [
   },
   {
     "url": "bundle.es2015.js",
-    "revision": "7e2a20319e123db7a8968d2ac2d0626d"
+    "revision": "d6d91a405005e005c7132a03f22ca105"
   },
   {
     "url": "bundle.js",
-    "revision": "e75aafceea1e4e8c69bb3595ba5016c8"
+    "revision": "8b854b27c8b7d81af3afbbd8524d3442"
   },
   {
     "url": "data.json",
